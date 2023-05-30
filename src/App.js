@@ -23,6 +23,7 @@ const MyInput = forwardRef((props, ref) => {
   // 实际调用的是自定义对象 {focus(){..}} 的 focus() 方法
   // 在 focus(){..} 方法内部对 realInputRef.current 进行了相关操作 
   // 操作 realInputRef.current 其实就是操作 DOM 节点 <input>
+  // 当父组件企图设置 ref.current.style 时将会失败（因为ref.current只是一个自定义对象，并非DOM节点）
   return jsx;
 });
 
